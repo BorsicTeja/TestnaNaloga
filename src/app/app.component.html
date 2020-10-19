@@ -1,0 +1,18 @@
+<p-button label="Find Teja's" (click)="showTeja()"></p-button>
+
+<p-table #userTable [value]="users" >
+    <ng-template pTemplate="header">
+        <tr>
+            <th *ngFor="let col of columns">
+                {{col.header}}
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-col>
+        <tr>
+            <td>{{col.firstName}}</td>
+            <td>{{col.lastName}}</td>
+            <td>{{col.post.postalCode}} {{col.post.city}}</td>
+        </tr>
+    </ng-template>
+</p-table>
